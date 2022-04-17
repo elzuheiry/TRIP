@@ -1,0 +1,376 @@
+.pwdRecovery {
+  width: 43.75rem;
+  margin: 3rem auto 0;
+  min-height: 25.25rem;
+
+  .titlePage {
+    margin: 0 0 1rem 0;
+
+    h1 {
+      font-size: $fontMiddle;
+      font-weight: 800;
+      color: $fontColor;
+    }
+  }
+
+  .form {
+    max-width: 400px;
+
+    .error_message_pwd {
+      width: 75%;
+      min-height: 1rem;
+      display: block;
+      margin: 1rem auto;
+      font-size: 0.785rem;
+      color: $errorMessage;
+      text-align: center;
+    }
+
+    .input {
+      width: 100%;
+      height: 4.187rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      .boxInput {
+        position: relative;
+        width: 100%;
+        height: 3.125rem;
+
+        label {
+          position: absolute;
+          font-weight: 600;
+          padding: 0 0.4rem;
+          background: $firstBackgroundColor;
+          color: $borderColor;
+          user-select: none;
+          pointer-events: none;
+          transition: all 120ms ease-in-out;
+
+          @include breakpoint-down(small) {
+            margin-left: 0.8rem;
+            font-size: 0.7rem;
+            top: 1.2rem;
+          }
+
+          @include breakpoint-up(medium) {
+            margin-left: 1rem;
+            font-size: 0.8rem;
+            top: 1rem;
+          }
+        }
+
+        input {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 0.875rem;
+          outline: none;
+          border: 0.5px solid $borderColor;
+          border-radius: 0.3rem;
+          color: $fontColor;
+          background: transparent;
+          transition: all 200ms ease-in-out;
+
+          @include breakpoint-down(small) {
+            padding-left: 0.8rem;
+            padding-right: 1.8rem;
+          }
+
+          @include breakpoint-up(medium) {
+            padding-left: 1.2rem;
+            padding-right: 3rem;
+          }
+
+          &:focus,
+          &:not(:placeholder-shown) {
+            border: 0.5px solid $mainColor;
+          }
+
+          &:focus ~ label,
+          &:not(:placeholder-shown) ~ label {
+            color: $mainColor;
+            top: -0.4rem;
+            margin-left: 1.5rem;
+            font-size: 0.6rem;
+          }
+        }
+      }
+
+      .errorMessage {
+        width: 100%;
+        justify-content: flex-end;
+        font-size: 0.7rem;
+        color: $errorMessage;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .btnPwdRecovery {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.send-verify-code {
+  position: relative;
+  height: 100%;
+  min-height: 15.25rem;
+  margin-top: 3rem;
+
+  .contentSendPwdReset {
+    width: 38.75rem;
+    margin: auto;
+
+    .titlePage {
+      margin-bottom: 1.5rem;
+
+      h2 {
+        color: $fontMiddle;
+        font-size: $fontMiddle;
+      }
+    }
+
+    .contentUser {
+      display: flex;
+      margin-bottom: 2rem;
+
+      .box-img {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .lines {
+        width: auto;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .fullname {
+          font-size: $fontSmaller;
+          line-height: 1;
+          font-weight: 700;
+          margin-bottom: 0.2rem;
+        }
+
+        .username {
+          font-size: $fontSmaller;
+          line-height: 1;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .send-mail {
+      display: block;
+      margin-top: 5rem;
+
+      .verification {
+        font-size: 0.975rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        display: flex;
+
+        input {
+          width: 1rem;
+          height: 1rem;
+          margin-right: 0.5rem;
+          cursor: pointer;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 0.975rem;
+        }
+      }
+
+      .error_message-verify {
+        width: 65%;
+        min-height: 1.5rem;
+        text-align: center;
+        font-size: 0.775rem;
+        color: $errorMessage;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .info {
+      p {
+        display: block;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.new-password {
+  margin-top: 4rem;
+  min-height: 22rem;
+
+  .container {
+    .content-new-password {
+      width: 31.25rem;
+      margin: auto;
+
+      .title-page {
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: $fontMiddle;
+          color: $fontColor;
+        }
+      }
+
+      .new-pwd-form {
+        width: 25rem;
+
+        .input {
+          width: 100%;
+          height: 4.187rem;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+
+          .boxInput {
+            position: relative;
+            width: 100%;
+            height: 3.125rem;
+
+            label {
+              position: absolute;
+              font-weight: 600;
+              padding: 0 0.4rem;
+              background: $firstBackgroundColor;
+              color: $borderColor;
+              user-select: none;
+              pointer-events: none;
+              transition: all 120ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                margin-left: 1.8rem;
+                font-size: 0.7rem;
+                top: 1.2rem;
+              }
+
+              @include breakpoint-up(medium) {
+                margin-left: 2.2rem;
+                font-size: 0.8rem;
+                top: 1rem;
+              }
+            }
+
+            input {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              font-size: 0.875rem;
+              outline: none;
+              border: 0.5px solid $borderColor;
+              border-radius: 0.3rem;
+              color: $fontColor;
+              background: transparent;
+              transition: all 200ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                padding-left: 1.8rem;
+                padding-right: 1.8rem;
+              }
+
+              @include breakpoint-up(medium) {
+                padding-left: 3rem;
+                padding-right: 3rem;
+              }
+
+              &:focus,
+              &:not(:placeholder-shown) {
+                border: 0.5px solid $mainColor;
+              }
+
+              &:focus ~ .iconInput,
+              &:not(:placeholder-shown) ~ .iconInput {
+                color: $mainColor;
+              }
+
+              &:focus ~ label,
+              &:not(:placeholder-shown) ~ label {
+                color: $mainColor;
+                top: -0.4rem;
+                margin-left: 1.5rem;
+                font-size: 0.6rem;
+              }
+
+              &:not(:placeholder-shown) ~ .iconInputLockShow {
+                color: $mainColor;
+                cursor: pointer;
+                pointer-events: all;
+              }
+            }
+
+            .iconInput {
+              position: absolute;
+              color: $borderColor;
+              user-select: none;
+              pointer-events: none;
+              transition: all 200ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                top: 50%;
+                left: 2.5%;
+                transform: translate(-2.5%, -50%);
+                font-size: 1rem;
+              }
+
+              @include breakpoint-up(medium) {
+                top: 50%;
+                left: 3%;
+                transform: translate(-3%, -50%);
+                font-size: 1.3rem;
+              }
+            }
+
+            .iconInputLockShow {
+              position: absolute;
+              line-height: 4.187rem;
+              padding: 0 0.5rem;
+              color: $borderColor;
+              pointer-events: none;
+              z-index: $thirdZindex;
+              transition: all 50ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                top: 50%;
+                right: 0;
+                transform: translate(-0%, -50%);
+                font-size: 1rem;
+              }
+
+              @include breakpoint-up(medium) {
+                top: 50%;
+                right: 0.5%;
+                transform: translate(-0.5%, -50%);
+                font-size: 1.3rem;
+              }
+            }
+          }
+
+          .errorMessage {
+            width: 100%;
+            justify-content: flex-end;
+            font-size: 0.7rem;
+            color: $errorMessage;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .btn-new-pwd {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

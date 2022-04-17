@@ -1,0 +1,160 @@
+.l-footer {
+  width: 100%;
+  height: auto;
+  background: $secondBackgroundColor;
+  color: $fontColor;
+  margin-top: 2rem;
+  padding: 4rem 0;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+
+    .top-footer {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2.5rem;
+
+      @include breakpoint-down(small) {
+        display: block;
+      }
+
+      @include breakpoint-up(medium) {
+        display: flex;
+      }
+
+      .l-s-f {
+        flex: 1;
+
+        h4 {
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          color: $mainColor;
+
+          @include breakpoint-down(small) {
+            font-size: 1.2rem;
+          }
+
+          @include breakpoint-up(medium) {
+            font-size: 1.5rem;
+          }
+        }
+
+        li {
+          a {
+            display: inline-block;
+            color: $darkColor;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .r-s-f {
+        flex: 1;
+        @include breakpoint-down(small) {
+          margin-top: 2.5rem;
+        }
+
+        h4 {
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          color: $mainColor;
+
+          @include breakpoint-down(small) {
+            font-size: 1.2rem;
+          }
+
+          @include breakpoint-up(medium) {
+            font-size: 1.5rem;
+          }
+        }
+
+        li {
+          margin-bottom: 0.5rem;
+          a {
+            display: inline-block;
+            color: $darkColor;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-footer {
+      margin-top: 1rem;
+
+      @include breakpoint-down(medium) {
+        display: block;
+      }
+
+      @include breakpoint-up(large) {
+        display: flex;
+      }
+
+      p {
+        flex: 2;
+        display: block;
+        font-size: 0.775rem;
+        font-weight: 500;
+      }
+
+      ul {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        @include breakpoint-down(medium) {
+          margin-top: 1.5rem;
+          justify-content: center;
+        }
+
+        @include breakpoint-up(large) {
+          justify-content: flex-end;
+        }
+
+        .footerSocial {
+          @include breakpoint-down(small) {
+            margin-right: 0.5rem;
+          }
+
+          @include breakpoint-up(smaller) {
+            margin-right: 2.5rem;
+          }
+
+          h3 {
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: $mainColor;
+          }
+        }
+
+        li {
+          display: inline-block;
+
+          a {
+            color: $fontColor;
+            font-size: 1rem;
+            margin-right: 1.5rem;
+
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

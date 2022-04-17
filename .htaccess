@@ -1,0 +1,19 @@
+Options +MultiViews
+
+## REMOVE EXTENSIONS
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+## REMOVE VARIABLES FROM URL
+RewriteRule ^user/edit-profile/([a-zA-Z_-]+) user/edit-profile.php?edit-profile=$1 [NC,L]
+
+## REDIRECT FROM EXTENSIONS TO NON-EXTENSIONS
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,NE,L]
+
+
+
+
+
+

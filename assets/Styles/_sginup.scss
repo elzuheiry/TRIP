@@ -1,0 +1,428 @@
+.backToHome {
+  display: inline-block;
+
+  a {
+    position: relative;
+    font-size: $fontSmaller;
+    font-weight: 800;
+    padding: 0.5rem 0;
+    letter-spacing: 0.5px;
+    width: 14rem;
+    display: flex;
+    text-transform: uppercase;
+    color: $mainColor;
+    justify-content: flex-end;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 5rem;
+      height: 0.125rem;
+      background: $mainColor;
+      transition: all 150ms ease-in-out;
+    }
+
+    &:hover::before {
+      left: 1rem;
+    }
+  }
+}
+
+.formPage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .allForms {
+    background: $firstBackgroundColor;
+    border: 0.2px solid $borderColor;
+    justify-content: center;
+    min-width: 37.5rem;
+    min-height: 24.125rem;
+    overflow: hidden;
+
+    @include breakpoint-down(medium) {
+      width: 65%;
+    }
+
+    @include breakpoint-down(small) {
+      width: 90%;
+    }
+
+    @include breakpoint-up(large) {
+      width: 50%;
+    }
+
+    .login_error_message {
+      width: 50%;
+      height: auto;
+      min-height: 1.2rem;
+      margin: 0.8rem auto;
+      font-size: 0.775rem;
+      line-height: 1.3;
+      text-align: center;
+      background: transparent;
+      color: $errorMessage;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .titleForm {
+      width: 100%;
+      height: 3.5rem;
+      background: transparent;
+      display: flex;
+
+      .title {
+        flex: 1;
+        cursor: pointer;
+        background: $secondBackgroundColor;
+
+        h2 {
+          width: 100%;
+          height: 100%;
+          font-size: 1rem;
+          text-transform: capitalize;
+          letter-spacing: 0.5px;
+          font-weight: 800;
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $mainColor;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .sginupTitle {
+        background: transparent;
+        border: 0;
+      }
+
+      .loginTitle {
+        background: transparent;
+      }
+
+      .bordder-signup {
+        border-left: 0.2px solid $borderColor;
+        border-bottom: 0.2px solid $borderColor;
+      }
+
+      .bordder-login {
+        border-right: 0.2px solid $borderColor;
+        border-bottom: 0.2px solid $borderColor;
+      }
+    }
+
+    .bodyForm {
+      position: relative;
+      max-width: 65%;
+      width: 100%;
+      min-height: 15rem;
+      margin: 1rem auto;
+
+      .form {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .input {
+          width: 100%;
+          height: 4.187rem;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+
+          .boxInput {
+            position: relative;
+            width: 100%;
+            height: 3.125rem;
+
+            label {
+              position: absolute;
+              font-weight: 600;
+              padding: 0 0.4rem;
+              background: $firstBackgroundColor;
+              color: $borderColor;
+              user-select: none;
+              pointer-events: none;
+              transition: all 120ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                margin-left: 1.8rem;
+                font-size: 0.7rem;
+                top: 1.2rem;
+              }
+
+              @include breakpoint-up(medium) {
+                margin-left: 2.2rem;
+                font-size: 0.8rem;
+                top: 1rem;
+              }
+            }
+
+            input {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              font-size: 0.875rem;
+              outline: none;
+              border: 0.5px solid $borderColor;
+              border-radius: 0.3rem;
+              color: $fontColor;
+              background: transparent;
+              transition: all 200ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                padding-left: 1.8rem;
+                padding-right: 1.8rem;
+              }
+
+              @include breakpoint-up(medium) {
+                padding-left: 3rem;
+                padding-right: 3rem;
+              }
+
+              &:focus,
+              &:not(:placeholder-shown) {
+                border: 0.5px solid $mainColor;
+              }
+
+              &:focus ~ .iconInput,
+              &:not(:placeholder-shown) ~ .iconInput {
+                color: $mainColor;
+              }
+
+              &:focus ~ label,
+              &:not(:placeholder-shown) ~ label {
+                color: $mainColor;
+                top: -0.4rem;
+                margin-left: 1.5rem;
+                font-size: 0.6rem;
+              }
+
+              &:not(:placeholder-shown) ~ .iconInputLockShow {
+                color: $mainColor;
+                cursor: pointer;
+                pointer-events: all;
+              }
+            }
+
+            .iconInput {
+              position: absolute;
+              color: $borderColor;
+              user-select: none;
+              pointer-events: none;
+              transition: all 200ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                top: 50%;
+                left: 2.5%;
+                transform: translate(-2.5%, -50%);
+                font-size: 1rem;
+              }
+
+              @include breakpoint-up(medium) {
+                top: 50%;
+                left: 3%;
+                transform: translate(-3%, -50%);
+                font-size: 1.3rem;
+              }
+            }
+
+            .iconInputLockShow {
+              position: absolute;
+              line-height: 4.187rem;
+              padding: 0 0.5rem;
+              color: $borderColor;
+              pointer-events: none;
+              z-index: $thirdZindex;
+              transition: all 50ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                top: 50%;
+                right: 0;
+                transform: translate(-0%, -50%);
+                font-size: 1rem;
+              }
+
+              @include breakpoint-up(medium) {
+                top: 50%;
+                right: 0.5%;
+                transform: translate(-0.5%, -50%);
+                font-size: 1.3rem;
+              }
+            }
+          }
+
+          .errorMessage {
+            width: 100%;
+            justify-content: flex-end;
+            font-size: 0.7rem;
+            color: $errorMessage;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .forgetPwd {
+          width: 100%;
+          height: auto;
+          margin: 0rem 0 1rem 0;
+          display: flex;
+          justify-content: flex-end;
+
+          a {
+            color: $fontColor;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .btnLogin {
+          width: 100%;
+          height: 3.125rem;
+          font-size: 1rem;
+          font-weight: 600;
+          margin-top: 0.7rem;
+          color: $whiteColor;
+          border-radius: 0.3rem;
+          text-transform: uppercase;
+          transition: all 150ms ease-in-out;
+        }
+      }
+
+      .sginupForm {
+        min-height: 25rem;
+      }
+    }
+
+    .signupBodyForm {
+      min-height: 25rem;
+    }
+  }
+}
+
+.verification-code {
+  .container {
+    .verification-content {
+      width: 28.125rem;
+      margin: 6rem auto 0;
+      background: $firstBackgroundColor;
+      border: 1px solid $borderColor;
+      padding: 2rem 4rem;
+
+      form {
+        .title-form {
+          margin-bottom: 2.5rem;
+          text-align: center;
+
+          h5 {
+            color: $mainColor;
+            font-size: $fontSmaller;
+          }
+        }
+
+        .input {
+          width: 100%;
+          min-height: 4.187rem;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+
+          .boxInput {
+            position: relative;
+            width: 100%;
+            height: 3.125rem;
+
+            label {
+              position: absolute;
+              font-weight: 600;
+              padding: 0 0.4rem;
+              background: $firstBackgroundColor;
+              color: $borderColor;
+              user-select: none;
+              pointer-events: none;
+              transition: all 120ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                margin-left: 1.3rem;
+                font-size: 0.7rem;
+                top: 1.2rem;
+              }
+
+              @include breakpoint-up(medium) {
+                margin-left: 1.5rem;
+                font-size: 0.8rem;
+                top: 1rem;
+              }
+            }
+
+            input {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              font-size: 0.875rem;
+              outline: none;
+              border: 0.5px solid $borderColor;
+              border-radius: 0.3rem;
+              color: $fontColor;
+              background: transparent;
+              transition: all 200ms ease-in-out;
+
+              @include breakpoint-down(small) {
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
+              }
+
+              @include breakpoint-up(medium) {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+              }
+
+              &:focus,
+              &:not(:placeholder-shown) {
+                border: 0.5px solid $mainColor;
+              }
+
+              &:focus ~ label,
+              &:not(:placeholder-shown) ~ label {
+                color: $mainColor;
+                top: -0.4rem;
+                margin-left: 1.5rem;
+                font-size: 0.6rem;
+              }
+            }
+          }
+
+          .errorMessage {
+            width: 85%;
+            font-size: 0.7rem;
+            color: $errorMessage;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .btn-verification {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}
